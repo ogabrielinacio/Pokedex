@@ -1,0 +1,18 @@
+@import url(../../../variables.scss);
+
+.header-class {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        height: auto;
+        margin-right: 20px; 
+        width: 20%;
+    }
+
+    p {
+        font-size: 3rem;
+        font-weight: bold;
+    }
+}

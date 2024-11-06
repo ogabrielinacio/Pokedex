@@ -1,0 +1,15 @@
+@import "../../../variables.scss";
+
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 9rem; 
+    gap: 2rem;
+    background-color: $mantle;
+
+
+    @media (min-width: 768px) {
+        flex-direction: column;
+    }
+}

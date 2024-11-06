@@ -1,0 +1,19 @@
+<div class="search-bar">
+  <input type="text" placeholder="Type the Pokemon name" [(ngModel)]="searchContainsName" />
+
+  <select [(ngModel)]="selectedType">
+    <option value="">Types</option>
+    @for (type of pokemonTypes; track type) {
+    <option [value]="type">{{ type }}</option>
+    }
+  </select>
+
+  <select [(ngModel)]="selectedHabitat">
+    <option value="">Habitats</option>
+    @for (habitat of pokemonHabitats; track habitat) {
+    <option [value]="habitat">{{ habitat }}</option>
+    }
+  </select>
+
+  <button (click)="handleSearch()">Search</button>
+</div>

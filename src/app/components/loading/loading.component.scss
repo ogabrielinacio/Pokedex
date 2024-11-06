@@ -1,0 +1,13 @@
+@import "../../../variables.scss";
+
+.loading-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    z-index: 1000;
+}
+
+:host ::ng-deep .mat-mdc-progress-spinner .mdc-circular-progress__indeterminate-circle-graphic {
+    stroke: $mauve !important;
+}

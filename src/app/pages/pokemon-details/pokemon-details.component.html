@@ -1,0 +1,39 @@
+@if (loadingService.isLoading$ | async){
+  <app-loading></app-loading>
+}
+@else {
+  <div class="pokemon-details">
+      <img [src]="pokemon!.urlImage" [alt]="pokemon!.name" />
+      <h2>{{ pokemon!.name }}</h2>
+      <p><strong>Weight:</strong> {{ pokemon!.weight }} kg</p>
+      <p><strong>Height:</strong> {{ pokemon!.height }} m</p>
+    
+      <h3>Abilities</h3>
+      <ul>
+        @for(abilityField of pokemon!.abilities; track abilityField) {
+          <li >
+              {{ abilityField.ability.name }} ({{ abilityField.isHidden ? 'Hidden' : 'Visible' }})
+          </li>
+        }
+      </ul>
+    
+      <h3>Types</h3>
+      <ul>
+        @for (typeField of pokemon!.types; track typeField) {
+          <li>
+              {{ typeField.type.name }}
+          </li>
+        }
+      </ul>
+    
+      <h3>Stats</h3>
+      <ul>
+        @for (statField of pokemon!.stats; track statField) {
+        <li>
+          {{ statField.stat.name }} : {{statField.baseStat}} ; effort:   {{statField.effort}}  
+        </li>
+      }
+      </ul>
+    </div>
+    
+}

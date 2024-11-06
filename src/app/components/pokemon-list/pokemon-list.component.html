@@ -1,0 +1,33 @@
+@if (loadingService.isLoading$ | async){
+  <app-loading></app-loading>
+} @else {
+  <!-- @if(searchResult.isSuccess) { -->
+    <div class="pokemon-list">
+        @for (pokemon of searchResult.value?.pokemons || []; track pokemon) {
+        <app-pokemon-card [pokemon]="pokemon" (selectPokemon)="onPokemonSelected($event)"></app-pokemon-card>
+        }
+    </div>
+      @if (searchResult.value?.pokemons && searchResult.value?.pokemons!.length > 0) {
+      <div class="pagination">
+        @if (searchResult.value && searchResult.value!.totalPages >= 2) {
+
+        <button (click)="previousPage()" [disabled]="currentPage === 1">←</button>
+        }
+
+        <div class="button-list">
+        @for (page of getPageNumbers(); track page) {
+          <button (click)="goToPage(page)" [class.active]="page === currentPage">
+            {{ page }}
+          </button>
+        }
+        </div>
+        @if (searchResult.value && searchResult.value!.totalPages >= 2) {
+        <button (click)="nextPage()" [disabled]="currentPage === totalPages">→</button>
+        }
+      </div>
+      }
+  <!-- } -->
+  @if (searchResult.code !== 0 && searchResult.code !== 200) {
+  <p> {{searchResult.errorMessage}} </p>
+  }
+}

@@ -1,0 +1,6 @@
+<div class="home">
+    <app-header></app-header>
+    <app-search (getSearchResults)="onSearchResults($event)"></app-search>
+    <app-pokemon-list [searchResult]="searchResult"></app-pokemon-list>
+</div>
+

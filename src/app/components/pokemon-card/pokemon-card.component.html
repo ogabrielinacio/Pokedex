@@ -1,0 +1,13 @@
+<div class="pokemon-card" (click)="onClick()">
+    <img [src]="pokemon.urlImage" [alt]="pokemon.name" class="pokemon-image" />
+    <h3>{{ pokemon.name}}</h3>
+    <p><strong>Weight:</strong> {{ pokemon.weight }} kg</p>
+    <p><strong>Height:</strong> {{ pokemon.height }} m</p>
+    <div class="pokemon-types">
+      @for (typeField of pokemon.types; track typeField) {
+
+      <span class="type">{{ typeField.type.name }}</span>
+      }
+    </div>
+  </div>
+  

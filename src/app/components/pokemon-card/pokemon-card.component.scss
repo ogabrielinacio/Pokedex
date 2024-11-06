@@ -1,0 +1,38 @@
+@import "../../../variables.scss";
+
+.pokemon-card {
+    border: 1px solid $rosewater;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+  
+    &:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  
+    .pokemon-image {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+  
+    .pokemon-types {
+      margin-top: 8px;
+  
+      .type {
+        display: inline-block;
+        background-color: $overlay2;
+        color: $text1;
+        padding: 4px 8px;
+        border-radius: 4px;
+        margin-right: 4px;
+        font-size: 0.9em;
+      }
+    }
+  }
+  
